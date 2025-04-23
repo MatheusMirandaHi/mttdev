@@ -1,0 +1,438 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #c5c5c5;
+}
+
+canvas { 
+  display: block; 
+  vertical-align: bottom; 
+}
+  
+#particles-js { 
+  position: fixed;
+  width: 100%; 
+  height: 100%;
+  background-color: black;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: -1;
+} 
+a {
+  text-decoration: none;
+}
+header {
+  /*background-color: #222;*/
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.logo img {
+  width: 60px;
+}
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+.navbar div {
+  padding: 20px 10px;
+}
+.navbar a {
+  background: var(
+    --Blue-Gradient,
+    linear-gradient(180deg, #c5c5c5 0%, black 150%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  background: var(
+    --Primary-Gradient,
+    linear-gradient(180deg, #ffffff 0%, rgb(0, 0, 0) 200%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 450px) {
+  .navbar a {
+    font-size: 12px; /* Reduce font size for smaller screens */
+  }
+}
+
+@media (max-width: 350px) {
+  .navbar a {
+    font-size: 10px; /* Reduce font size for smaller screens */
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.avatar img {
+  width: 250px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00f0ff, 0 0 20px #0077ff;
+}
+
+@media (max-width: 500px) {
+  .avatar img {
+    width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .avatar img {
+    width: 200px;
+  }
+}
+
+.about {
+  text-align: center;
+  padding: 20px;
+}
+.about-text {
+  width: 90%;
+  max-width: 652px;
+  margin: 30px auto;
+}
+.about-text h1 {
+  background: var(
+    --Blue-Gradient,
+    linear-gradient(180deg, #c5c5c5 0%, rgb(0, 0, 0) 150%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 8vw;
+  line-height: 1.2;
+}
+.about-text h1 > span {
+  background: var(
+    --Primary-Gradient,
+    linear-gradient(180deg, #5badff 0%, #1373d1 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.about-text p {
+  font-size: 4vw;
+  margin-top: 30px;
+}
+.about-btn {
+  margin-top: 30px;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+  .about-text h1 {
+    font-size: 55px;
+  }
+  .about-text p {
+    font-size: 18px;
+  }
+}
+
+/* From Uiverse.io by Mangesh636 */ 
+.btn-primary {
+  background: transparent;
+  position: relative;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 25px;
+  outline: none;
+  overflow: hidden;
+  color: rgb(255, 255, 255);
+  transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+}
+
+.btn-primary span {
+  margin: 10px;
+}
+
+.btn-primary::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  border-radius: 50%;
+  display: block;
+  width: 20em;
+  height: 20em;
+  left: -5em;
+  text-align: center;
+  transition: box-shadow 0.5s ease-out;
+  z-index: -1;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  border: 1px solid rgb(0, 119, 181);
+}
+
+.btn-primary:hover::before {
+  box-shadow: inset 0 0 0 10em rgb(0, 119, 181);
+}
+
+
+.btn-secondary {
+  background: transparent;
+  position: relative;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 25px;
+  outline: none;
+  overflow: hidden;
+  color: rgb(255, 255, 255);
+  fill: white;
+  transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+}
+
+.btn-secondary span {
+  margin: 10px;
+}
+
+.btn-secondary::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  border-radius: 50%;
+  display: block;
+  width: 20em;
+  height: 20em;
+  left: -5em;
+  text-align: center;
+  transition: box-shadow 0.5s ease-out;
+  z-index: -1;
+}
+
+.btn-secondary:hover {
+  color: #000000;
+  border: 1px solid rgb(255, 255, 255);
+  fill: black;
+  transition: 0.5s ease-out;
+
+}
+
+.btn-secondary:hover::before {
+  box-shadow: inset 0 0 0 10em rgb(255, 255, 255);
+}
+
+
+.formacao-with {
+  text-align: center;
+}
+
+.formacao-with h2 {
+  background: var(
+    --Blue-Gradient,
+    linear-gradient(180deg, #c5c5c5 0%, black 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 25px;
+}
+
+.formacao-with-lang {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin: 50px auto;
+  cursor: pointer;
+}
+
+.formacao-with-lang img {
+  width: 42px;
+  margin: 0 auto;
+}
+
+@media (max-width: 550px) {
+  .formacao-with-lang {
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+
+  .formacao-with-lang img {
+    width: 30px;
+  }
+}
+
+
+.primary-heading {
+  text-align: center;
+  font-size: 25px;
+}
+.heading-project {
+  background: var(
+    --Blue-Gradient,
+    linear-gradient(180deg, #c5c5c5 0%, black 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.projects {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+.project-item {
+  background: #2a2a2a;
+  margin: 20px;
+  border-radius: 18px 18px 0 0;
+  flex: 1 1 calc(50% - 40px); /* Two columns */
+  box-sizing: border-box;
+}
+.project-item img {
+  width: 100%;
+  border-radius: 18px 18px 0 0;
+}
+.project-title {
+  padding: 15px;
+}
+
+.project-title p {
+  text-decoration: none;
+  color: #c5c5c5;
+}
+.project-title h3 {
+  color: #fff;
+}
+
+@media (max-width: 650px) {
+  .project-item {
+    flex: 1 1 100%;
+    font-size: 12px; /* Single column */
+  }
+}
+
+.heading-formacao {
+  background: var(
+    --Blue-Gradient,
+    linear-gradient(180deg, #c5c5c5 0%, black 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
+.formacao-item {
+  padding: 30px 50px 50px 50px;
+  background-color: #191919;
+  border-radius: 20px;
+  text-align: justify; /* Justify text */
+}
+
+.formacao-title-container {
+  display: flex;
+  justify-content: center; /* Center title and icon horizontally */
+  align-items: center; /* Center title and icon vertically */
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+}
+
+.formacao-title-container .date {
+  margin-left: auto;
+  font-size: 14px; /* Adjust font size for smaller screens */
+}
+
+.formacao-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .formacao-title-container {
+    flex-direction: column; /* Stack title and date vertically */
+    align-items: center;
+    text-align: center; /* Center title and date */
+  }
+
+  .formacao-title-container .date {
+    margin-left: 0;
+    margin-top: 10px; /* Add spacing between title and date */
+    font-size: 16px; /* Adjust font size for better readability */
+  }
+
+  .formacao-title {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
+}
+footer {
+  background-color: #191919;  
+  fill: #c5c5c5;
+  text-align: justify;
+}
+footer h2 {
+  color: #fff;
+  font-size: 25px;
+  margin-bottom: 20px;
+
+}
+footer p {
+  font-size: 15px;
+}
+
+
+.social-links {
+  display: flex;
+  margin-top: 40px;
+}
+.social-links svg {
+  margin-right: 20px;
+}
