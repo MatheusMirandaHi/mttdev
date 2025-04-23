@@ -1,12 +1,12 @@
 @media (max-width: 450px) {
   .navbar a {
-    font-size: 12px; /* Reduce font size for smaller screens */
+    font-size: 12px; 
   }
 }
 
 @media (max-width: 350px) {
   .navbar a {
-    font-size: 10px; /* Reduce font size for smaller screens */
+    font-size: 10px; 
   }
 }
 
@@ -29,22 +29,7 @@
     font-family: "Poppins", sans-serif;
     color: #c5c5c5;
   }
-/* 
-  canvas {
-    display: block;
-    vertical-align: bottom;
-} */
 
-/* #particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-    z-index: -1;
-} */
 
 .container-about{
   width: 90%;
@@ -142,9 +127,6 @@ a {
   }
   
 
-
-  
-  /* From Uiverse.io by Darlley */ 
 #cursor,
 #box,
 #text {
@@ -225,7 +207,6 @@ a {
     
 }
 
-/* From Uiverse.io by MuhammadHasann */ 
 .button {
     --black-700: hsla(0 0% 12% / 1);
     --border_radius: 9999px;
