@@ -1,12 +1,12 @@
 @media (max-width: 450px) {
   .navbar a {
-    font-size: 12px; /* Reduce font size for smaller screens */
+    font-size: 12px; 
   }
 }
 
 @media (max-width: 350px) {
   .navbar a {
-    font-size: 10px; /* Reduce font size for smaller screens */
+    font-size: 10px; 
   }
 }
 
@@ -58,7 +58,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-   /* Add gap between navbar items */
+  
   }
   .navbar div {
     padding: 20px 10px;
@@ -85,7 +85,6 @@ a {
   }
   
 
-/* container central */
 .container {
   width: 90%;
   max-width: 1100px;
@@ -156,13 +155,10 @@ a {
 
 
 
-/* From Uiverse.io by ilkhoeri */ 
 .card {
     padding: 1rem;
     overflow: hidden;
-   /*  border: 1px solid #c5c5c5; */
     border-radius: 12px;
-/*     background-color: #d9d9d92f; */
     backdrop-filter: blur(8px);
     min-width: 344px;
   }
@@ -227,10 +223,7 @@ a {
     width: 20px;
     height: 20px;
   }
- /*  .copy_toggle:active > svg > path,
-  .copy_toggle:focus-within > svg > path {
-    animation: clipboard-check 500ms linear forwards;
-  } */
+ 
   .card-body {
     display: flex;
     flex-direction: column;
@@ -317,14 +310,7 @@ a {
       max-width: max-content;
     }
   }
-/*   @keyframes clipboard-check {
-    100% {
-      color: #fff;
-      d: path(
-        "M 9 5 H 7 a 2 2 0 0 0 -2 2 v 12 a 2 2 0 0 0 2 2 h 10 a 2 2 0 0 0 2 -2 V 7 a 2 2 0 0 0 -2 -2 h -2 M 9 5 a 2 2 0 0 0 2 2 h 2 a 2 2 0 0 0 2 -2 M 9 5 a 2 2 0 0 1 2 -2 h 2 a 2 2 0 0 1 2 2 m -6 9 l 2 2 l 4 -4"
-      );
-    }
-  } */
+
   @media (max-width: 800px) {
 
     .project-explications {
