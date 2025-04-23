@@ -73,13 +73,13 @@ nav {
 
 @media (max-width: 450px) {
   .navbar a {
-    font-size: 12px; /* Reduce font size for smaller screens */
+    font-size: 12px; 
   }
 }
 
 @media (max-width: 350px) {
   .navbar a {
-    font-size: 10px; /* Reduce font size for smaller screens */
+    font-size: 10px; 
   }
 }
 
@@ -162,7 +162,6 @@ nav {
   }
 }
 
-/* From Uiverse.io by Mangesh636 */ 
 .btn-primary {
   background: transparent;
   position: relative;
@@ -333,7 +332,7 @@ nav {
   background: #2a2a2a;
   margin: 20px;
   border-radius: 18px 18px 0 0;
-  flex: 1 1 calc(50% - 40px); /* Two columns */
+  flex: 1 1 calc(50% - 40px); 
   box-sizing: border-box;
 }
 .project-item img {
@@ -355,7 +354,7 @@ nav {
 @media (max-width: 650px) {
   .project-item {
     flex: 1 1 100%;
-    font-size: 12px; /* Single column */
+    font-size: 12px;
   }
 }
 
@@ -373,20 +372,20 @@ nav {
   padding: 30px 50px 50px 50px;
   background-color: #191919;
   border-radius: 20px;
-  text-align: justify; /* Justify text */
+  text-align: justify; 
 }
 
 .formacao-title-container {
   display: flex;
-  justify-content: center; /* Center title and icon horizontally */
-  align-items: center; /* Center title and icon vertically */
+  justify-content: center; 
+  align-items: center; 
   margin-bottom: 20px;
-  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  flex-wrap: wrap; 
 }
 
 .formacao-title-container .date {
   margin-left: auto;
-  font-size: 14px; /* Adjust font size for smaller screens */
+  font-size: 14px; 
 }
 
 .formacao-title {
@@ -398,19 +397,19 @@ nav {
 
 @media (max-width: 768px) {
   .formacao-title-container {
-    flex-direction: column; /* Stack title and date vertically */
+    flex-direction: column; 
     align-items: center;
-    text-align: center; /* Center title and date */
+    text-align: center; 
   }
 
   .formacao-title-container .date {
     margin-left: 0;
-    margin-top: 10px; /* Add spacing between title and date */
-    font-size: 16px; /* Adjust font size for better readability */
+    margin-top: 10px; 
+    font-size: 16px; 
   }
 
   .formacao-title {
-    font-size: 18px; /* Adjust font size for smaller screens */
+    font-size: 18px; 
   }
 }
 footer {
