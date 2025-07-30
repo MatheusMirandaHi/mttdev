@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="cdn/css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link rel="shortcut icon" href="cdn/images/icons8-código-fonte-48.png" type="image/x-icon">
-    
+
     <title>Matheus Miranda | Dev. Front End</title>
   </head>
   <body>
     
+
     <div id="particles-js"></div> 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
@@ -31,11 +32,81 @@
     
     <section class="container about">
       
-      <div class="avatar">
-        <img src="cdn/images/Image - Perfil.jpg" alt="avatar" />
-      </div>
-      <div class="about-text">
-        <h1>Desenvolvedor<br />Front<span> End</span></h1>
+      <div class="avatar" style="
+    width: 200px;   
+    height: 200px; 
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    pointer-events: none;
+    user-select: none;">
+    
+    <video id="avatarVideo" draggable="false" autoplay muted playsinline style="
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120pc;   
+      height: 120pc; 
+      transform: translate(-50%, -50%) scale(0.3);
+      opacity: 1;
+      transition: opacity 0.8s ease-in-out;
+      pointer-events: none;
+      user-select: none;">
+    </video>
+
+   <script>
+  const videos = [
+    "cdn/images/voice-interaction-animation (2).mp4",
+    "cdn/images/voice-interaction-animation (1).mp4",
+    "cdn/images/voice-interaction-animation.mp4"
+  ];
+
+  let currentIndex = 0;
+  const videoElement = document.getElementById("avatarVideo");
+
+  // Trocar vídeo com efeito de transição
+  function playNextVideo() {
+    // Fade out
+    videoElement.style.opacity = 0;
+
+    // Aguarda a transição (800ms), troca o vídeo e aplica fade in
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % videos.length;
+      videoElement.src = videos[currentIndex];
+      videoElement.play();
+
+      // Quando carregar, aplica fade in
+      videoElement.oncanplay = () => {
+        videoElement.style.opacity = 1;
+      };
+    }, 400); // corresponde ao tempo da transição CSS
+  }
+
+  // Iniciar primeiro vídeo
+  videoElement.src = videos[currentIndex];
+  videoElement.play();
+
+  // Ao terminar, executar transição para o próximo
+  videoElement.addEventListener("ended", playNextVideo);
+</script>
+  </div>
+</div>
+</div>
+        <div class="about-text">     
+        <h1>Desenvolvedor</h1>
+
+<div class="job">
+  <div class="job-loader">
+    <div class="job-words">
+      <span class="word"><span id="word2"></span></span>
+      <span class="word">Front <span id="word2"> End </span></span>
+      <span class="word">Back <span id="word2"> End </span></span>
+      <span class="word">Full <span id="word2"> Stack </span></span>
+      <span class="word">UI/<span id="word2">UX</span> </span></span>
+    </div>
+  </div>
+</div>
+
         <p>
           Sou programador na área de desenvolvimento web, formado no ensino médio em 2024 com foco em Desenvolvimento de Sistemas. Atualmente, sou estudante de Ciência da Computação na Universidade Presbiteriana Mackenzie..
         </p>
@@ -68,18 +139,37 @@
             <span>GitHub</span>
           </button>
 </a>
+
+<a href="cdn/images/cv.pdf" download>
+<button class="btn-cv">
+  <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" height="24px" width="24px">
+    <g stroke-width="0"></g>
+    <g stroke-linejoin="round" stroke-linecap="round"></g>
+    <g>
+      <g>
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#f1f1f1" d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"></path>
+      </g>
+    </g>
+  </svg>  
+    Curriculo
+  <div class="tooltip">Download my Cv </div>
+</button>
+</a>
     </div>
 
     </section>
     <section class="container formacao-with">
       <h2>EXPERIÊNCIAS COM</h2>
       <a href="tools.html">
-      <div class="formacao-with-lang">
-        <div><img src="cdn/images/html5.png" alt="html logo" /></div>
-        <div><img src="cdn/images/css3.png" alt="html logo" /></div>
-        <div><img src="cdn/images/reactjs.png" alt="html logo" /></div>
-        <div><img src="cdn/images/javascript.png" alt="html logo" /></div>
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="42" height="42" viewBox="0 0 50 50">
+      <div class="formacao-with-lang" style=" display: flex; justify-content: center; align-items: center; width: 350px;">
+
+        <div class="icon-marquee">
+  <div class="icon-track">
+    <img src="cdn/images/html5.png" alt="HTML" />
+    <img src="cdn/images/css3.png" alt="CSS" />
+    <img src="cdn/images/javascript.png" alt="JS" />
+    <img src="cdn/images/reactjs.png" alt="React" />
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="42" height="42" viewBox="0 0 50 50">
           <defs>
             <linearGradient id="gradient2" x1="0" y1="0" x2="1" y2="1">
               <stop offset="40%" stop-color="#c5c5c5" />
@@ -88,6 +178,7 @@
           </defs>
           <path fill="url(#gradient2)" d="M 46.792969 22.089844 L 27.910156 3.207031 C 27.109375 2.402344 26.054688 2 25 2 C 23.945313 2 22.890625 2.402344 22.089844 3.207031 L 18.355469 6.941406 L 22.976563 11.5625 C 24.511719 10.660156 26.511719 10.855469 27.828125 12.171875 C 29.144531 13.488281 29.335938 15.488281 28.433594 17.019531 L 32.976563 21.5625 C 34.511719 20.660156 36.511719 20.855469 37.828125 22.171875 C 39.390625 23.734375 39.390625 26.265625 37.828125 27.828125 C 36.265625 29.390625 33.734375 29.390625 32.171875 27.828125 C 30.855469 26.511719 30.660156 24.511719 31.5625 22.976563 L 27.019531 18.433594 C 26.695313 18.625 26.355469 18.765625 26 18.855469 L 26 31.140625 C 27.722656 31.585938 29 33.136719 29 35 C 29 37.210938 27.210938 39 25 39 C 22.789063 39 21 37.210938 21 35 C 21 33.136719 22.277344 31.585938 24 31.140625 L 24 18.855469 C 23.332031 18.683594 22.695313 18.351563 22.171875 17.828125 C 20.855469 16.511719 20.664063 14.511719 21.566406 12.980469 L 16.941406 8.355469 L 3.207031 22.089844 C 1.597656 23.695313 1.597656 26.304688 3.207031 27.910156 L 22.089844 46.792969 C 22.890625 47.597656 23.945313 48 25 48 C 26.054688 48 27.109375 47.597656 27.910156 46.792969 L 46.792969 27.910156 C 48.402344 26.304688 48.402344 23.695313 46.792969 22.089844 Z"></path>
         </svg>
+
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="42" height="42" viewBox="0 0 48 48">
           <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
             <stop offset="60%" stop-color="#c5c5c5" />
@@ -95,14 +186,116 @@
           </linearGradient>
           <path fill="url(#gradient)" d="M24,9.604c-5.589,0-9.347,2.439-11.276,7.318c-0.2,0.505,0.417,0.92,0.816,0.551 c2.035-1.882,4.322-2.505,6.86-1.871c1.826,0.456,3.131,1.781,4.576,3.247C27.328,21.236,30.051,24,36,24 c5.589,0,9.348-2.44,11.276-7.319c0.2-0.505-0.417-0.92-0.816-0.551c-2.035,1.882-4.322,2.506-6.86,1.872 c-1.825-0.456-3.13-1.781-4.575-3.247C32.672,12.367,29.948,9.604,24,9.604L24,9.604z M12,24c-5.589,0-9.348,2.44-11.276,7.319 c-0.2,0.505,0.417,0.92,0.816,0.551c2.035-1.882,4.322-2.506,6.86-1.871c1.825,0.457,3.13,1.781,4.575,3.246 c2.353,2.388,5.077,5.152,11.025,5.152c5.589,0,9.348-2.44,11.276-7.319c0.2-0.505-0.417-0.92-0.816-0.551 c-2.035,1.882-4.322,2.506-6.86,1.871c-1.826-0.456-3.131-1.781-4.576-3.246C20.672,26.764,17.949,24,12,24L12,24z"></path>
         </svg>
+
+    
+    <!-- Duplicado para criar looping contínuo -->
+    <img src="cdn/images/html5.png" alt="HTML" />
+    <img src="cdn/images/css3.png" alt="CSS" />
+    <img src="cdn/images/javascript.png" alt="JS" />
+    <img src="cdn/images/reactjs.png" alt="React" />
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="42" height="42" viewBox="0 0 50 50">
+          <defs>
+            <linearGradient id="gradient2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="40%" stop-color="#c5c5c5" />
+            <stop offset="100%" stop-color="transparent" />
+            </linearGradient>
+          </defs>
+          <path fill="url(#gradient2)" d="M 46.792969 22.089844 L 27.910156 3.207031 C 27.109375 2.402344 26.054688 2 25 2 C 23.945313 2 22.890625 2.402344 22.089844 3.207031 L 18.355469 6.941406 L 22.976563 11.5625 C 24.511719 10.660156 26.511719 10.855469 27.828125 12.171875 C 29.144531 13.488281 29.335938 15.488281 28.433594 17.019531 L 32.976563 21.5625 C 34.511719 20.660156 36.511719 20.855469 37.828125 22.171875 C 39.390625 23.734375 39.390625 26.265625 37.828125 27.828125 C 36.265625 29.390625 33.734375 29.390625 32.171875 27.828125 C 30.855469 26.511719 30.660156 24.511719 31.5625 22.976563 L 27.019531 18.433594 C 26.695313 18.625 26.355469 18.765625 26 18.855469 L 26 31.140625 C 27.722656 31.585938 29 33.136719 29 35 C 29 37.210938 27.210938 39 25 39 C 22.789063 39 21 37.210938 21 35 C 21 33.136719 22.277344 31.585938 24 31.140625 L 24 18.855469 C 23.332031 18.683594 22.695313 18.351563 22.171875 17.828125 C 20.855469 16.511719 20.664063 14.511719 21.566406 12.980469 L 16.941406 8.355469 L 3.207031 22.089844 C 1.597656 23.695313 1.597656 26.304688 3.207031 27.910156 L 22.089844 46.792969 C 22.890625 47.597656 23.945313 48 25 48 C 26.054688 48 27.109375 47.597656 27.910156 46.792969 L 46.792969 27.910156 C 48.402344 26.304688 48.402344 23.695313 46.792969 22.089844 Z"></path>
+        </svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="42" height="42" viewBox="0 0 48 48">
+          <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="60%" stop-color="#c5c5c5" />
+            <stop offset="100%" stop-color="transparent" />
+          </linearGradient>
+          <path fill="url(#gradient)" d="M24,9.604c-5.589,0-9.347,2.439-11.276,7.318c-0.2,0.505,0.417,0.92,0.816,0.551 c2.035-1.882,4.322-2.505,6.86-1.871c1.826,0.456,3.131,1.781,4.576,3.247C27.328,21.236,30.051,24,36,24 c5.589,0,9.348-2.44,11.276-7.319c0.2-0.505-0.417-0.92-0.816-0.551c-2.035,1.882-4.322,2.506-6.86,1.872 c-1.825-0.456-3.13-1.781-4.575-3.247C32.672,12.367,29.948,9.604,24,9.604L24,9.604z M12,24c-5.589,0-9.348,2.44-11.276,7.319 c-0.2,0.505,0.417,0.92,0.816,0.551c2.035-1.882,4.322-2.506,6.86-1.871c1.825,0.457,3.13,1.781,4.575,3.246 c2.353,2.388,5.077,5.152,11.025,5.152c5.589,0,9.348-2.44,11.276-7.319c0.2-0.505-0.417-0.92-0.816-0.551 c-2.035,1.882-4.322,2.506-6.86,1.871c-1.826-0.456-3.131-1.781-4.576-3.246C20.672,26.764,17.949,24,12,24L12,24z"></path>
+        </svg>
+  </div>
+</div>
+
       </div>
 </a>
-    
+
+
+<style>
+
+  .icon-marquee::before,
+.icon-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 10px;
+  backdrop-filter: blur(0.5px);
+   /* Ou: filter: blur(10px); */
+}
+
+/* Lado esquerdo */
+.icon-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, rgb(0, 0, 0), transparent);
+}
+
+/* Lado direito */
+.icon-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, rgb(0, 0, 0), transparent);
+}
+
+  .icon-marquee {
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  height: 60px;
+  position: relative;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.icon-track {
+  display: flex;
+  gap: 30px;
+  width: fit-content;
+  animation: scroll 12s linear infinite;
+  align-items: center;
+}
+
+.icon-track img {
+  height: 40px;
+  width: auto;
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+
+.icon-track img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.icon-track svg:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+</style>
 
     </section>
+    
     <a href="project.html">
-    <section class="container">
-      <h2 class="primary-heading heading-project">PROJETOS</h2>
+    <section class="container" style="margin-top: -80px; margin-bottom: -80px;">
+      <h2 class="primary-heading heading-project">PROJETOS WEB</h2>
       <div class="projects">
         <div class="project-item">
           <img src="cdn/images/Booking de Mesa 01.png" alt="project1" />
@@ -121,7 +314,7 @@
       </div> 
     </a>
     </section>
- 
+    
     <section class="container">
       <h2 class="primary-heading heading-formacao">FORMAÇÃO</h2><br>
       <div class="formacaos">  
@@ -134,10 +327,39 @@
           <p>
             Sou Estudante do Mackenzie, onde estou me formando em <b style="color: white;">Ciência da
             Computação.</b> Adquirindo conhecimentos sólidos em
-            algoritmos, estruturas de dados, pensamento computacioanl, lógica maatemática edesenvolvimento de software.
+            algoritmos, estruturas de dados, pensamento computacioanl, lógica matemática e desenvolvimento de software.
             Estou sempre em busca de aprender novas tecnologias e aprimorar minhas
             habilidades.
           </p>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: -20px; justify-content: flex-start; margin-top: 20px;"">
+
+  <span style="border: 1px solid white; padding: 5px; width: 70px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    Cálculo
+  </span>
+
+  <span  style="border: 1px solid white; padding: 5px; width: 80px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    Algoritmos
+  </span>
+
+  <span style="border: 1px solid white; padding: 5px; width: 120px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    Estrutura de Dados
+  </span>
+
+  <span style="border: 1px solid white; padding: 5px; width: 100px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    Compiladores
+  </span>
+
+  <span style="border: 1px solid white; padding: 5px; width: 120px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    Inteligência Artificial
+  </span>
+  
+  <span style="border: 1px solid white; padding: 5px; width: 140px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+   Engenharia de Software	
+ </span>
+
+</div>
+
         </div><br>
         <div class="formacao-item">
           <div class="formacao-title-container">
@@ -152,6 +374,27 @@
             software, incluindo áreas como web, mobile e outras tecnologias
             relacionadas.
           </p>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: -20px; justify-content: flex-start; margin-top: 20px;"">
+
+  <span style="border: 1px solid white; padding: 5px; width: 130px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    Desenvolvimento Web
+  </span>
+
+  <span  style="border: 1px solid white; padding: 5px; width: 100px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    Banco de Dados
+  </span>
+
+  <span style="border: 1px solid white; padding: 5px; width: 140px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    Logica de Programação
+  </span>
+
+  <span style="border: 1px solid white; padding: 5px; width: 110px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    Aplicações Mobile
+  </span>
+
+</div>
+
         </div><br>
         <div class="formacao-item">
           <div class="formacao-title-container">
@@ -162,6 +405,7 @@
           <p>
             Estudei na escola de idiomas Yázigi por 9 anos consecutivos, onde adquiri minha proficiência e <b style="color: white;">fluência em inglês</b>, desenvolvendo habilidades avançadas no idioma.
           </p>
+
         </div>
       </div>
     </section>
@@ -171,11 +415,60 @@
       <div class="formacaos">  
         <div class="formacao-item">
           <div class="formacao-title-container">
-            <div class="formacao-title">Estágiario em T.I & BI.</div>
-            <div class="date">Set. 2023 - Presente</div>
+            <div><img src="cdn/images/tuvnordbrasil_logo.jpg" width="40px" style="border-radius: 50%;" alt="Yazigi" /></div>
+            <div class="formacao-title">Desenvolvedor Full Stack | ASP.Net</div>
+            <div class="date">Jul. 2025 - (Presente)</div>
           </div>
           <p>
-            Sou estagiário na empresa DF Secretariado Remoto, localizada no Tamboré, onde desenvolvi soluções web e automações como desenvolvedor terceirizado. Integrei chatbots via WhatsApp e sites ao Google Forms para automação de formulários e registro de dados em Excel (CRUD). Essa otimização reduziu em cerca de 70% o tempo de envio e cadastro de pedidos e pagamentos, substituindo processos manuais.
+              Atuando como estagiário Full Stack na TÜV NORD Brasil - BRTÜV, participando de atividades de desenvolvimento front-end e back-end, manutenção de sistemas legados e apoio em operações com banco de dados. Experiência com C#, ASP.NET (Web Forms/MVC), JavaScript e SQL Server, práticas de DevOps e CI/CD.          </p> <br>
+          
+<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: -20px; justify-content: flex-start;"">
+
+  <span style="border: 1px solid white; padding: 5px; width: 70px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    .Net Core
+  </span>
+
+  <span  style="border: 1px solid white; padding: 5px; width: 60px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    Asp.Net
+  </span>
+
+  <span style="border: 1px solid white; padding: 5px; width: 50px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    C#
+  </span>
+
+  <span style="border: 1px solid white; padding: 5px; width: 70px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    JavaScript
+  </span>
+
+  <span style="border: 1px solid white; padding: 5px; width: 80px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    Git | GitHub
+  </span>
+
+   <span style="border: 1px solid white; padding: 5px; width: 70px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    Html | Css
+  </span>
+
+  <span style="border: 1px solid white; padding: 5px; width: 70px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    SQL Server
+  </span>
+
+  <span style="border: 1px solid white; padding: 5px; width: 70px; display: flex; justify-content: center; font-size: 10px;  border-radius: 20px;">
+    Bootstrap
+  </span>
+
+</div>
+
+        
+        </div> <br>
+
+         <div class="formacaos">  
+        <div class="formacao-item">
+          <div class="formacao-title-container">
+            <div class="formacao-title">Estágiario em T.I & BI.</div>
+            <div class="date">Set. 2023 - Jun. 2025</div>
+          </div>
+          <p>
+            Estagiei na empresa DF Secretariado Remoto, localizada no Tamboré, onde desenvolvi soluções web e automações como desenvolvedor terceirizado. Integrei chatbots via WhatsApp e sites ao Google Forms para automação de formulários e registro de dados em Excel (CRUD). Essa otimização reduziu em cerca de 70% o tempo de envio e cadastro de pedidos e pagamentos, substituindo processos manuais.
           </p>
         </div>
       
@@ -217,5 +510,52 @@
 
 
     </footer>
+
+     <style>
+    #toggle-audio {
+         display: flex;
+    position: fixed; 
+    bottom: 20px;   
+    left: 20px;     
+
+    padding: 10px 20px;
+    background-color: #22222200;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 9999; 
+    }
+
+    #toggle-audio:hover {
+    background-color: #222222;
+    }
+  </style> 
+
+  <button id="toggle-audio">🔇 Off</button>
+
+  <audio id="bg-audio" loop>
+    <source src="cdn/images/space-ambient-sci-fi-121842.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <script>
+    const audio = document.getElementById('bg-audio');
+    const button = document.getElementById('toggle-audio');
+    let isPlaying = false;
+
+    button.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        button.textContent = '🔇 Off';
+      } else {
+        audio.volume = 0.1; // Volume suave
+        audio.play();
+        button.textContent = '🔊 On';
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+  
   </body>
 </html>

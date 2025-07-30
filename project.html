@@ -34,7 +34,7 @@
         </div>
 
     <div class="iframe-container">
-        <h1>Desenvolvimento Web</h1> <br><br>
+        <h1>Desenvolvimento Web</h1> <br>
 </div>
 
 <div class="card">
@@ -151,6 +151,52 @@
         </div>
       </div> 
     </section>
+  
+     <style>
+    #toggle-audio {
+         display: flex;
+    position: fixed;
+    bottom: 20px;   
+    left: 20px;    
+
+    padding: 10px 20px;
+    background-color: #22222200;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 9999; 
+    }
+
+    #toggle-audio:hover {
+    background-color: #222222;
+    }
+  </style> 
+
+  <button id="toggle-audio">🔇 Off</button>
+
+  <audio id="bg-audio" loop>
+    <source src="cdn/images/space-ambient-sci-fi-121842.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <script>
+    const audio = document.getElementById('bg-audio');
+    const button = document.getElementById('toggle-audio');
+    let isPlaying = false;
+
+    button.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        button.textContent = '🔇 Off';
+      } else {
+        audio.volume = 0.1; // Volume suave
+        audio.play();
+        button.textContent = '🔊 On';
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
   
   </body>
 </html>

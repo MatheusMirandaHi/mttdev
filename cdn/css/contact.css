@@ -24,7 +24,11 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
+    
+html, body{
+    cursor: url('/mttdev-main/cdn/images/icons8-chatgpt-20.png'), auto;
+}
+
   body {
     font-family: "Poppins", sans-serif;
     color: #c5c5c5;
@@ -401,6 +405,8 @@ a {
   }
 
 
+
+  
 
 footer {
     display: flex;
